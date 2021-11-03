@@ -1,6 +1,4 @@
-#include<stdio.h>
 #include<iostream>
-#include<stdint.h>
 #include<vector>
 #include<list>
 #include<queue>
@@ -79,7 +77,7 @@ public:
       	return true;
    	}
 	bool sudokuSolve(int(&init_values)[9][9]) {
-      priority_queue<polje, vector<polje>, komparator> pq;
+      		std::priority_queue<polje, std::vector<polje>, komparator> pq;
 			for (int row =0; row < 9; row++) {
          	for(int col = 0; col <9; col++) {
                if(init_values[row][col]==-1) {
@@ -130,7 +128,7 @@ public:
     SudokuField *solve(int (&init_values)[rows][cols]){
       	
       	struct CP_sudoku::SudokuField* rjesenje = (struct CP_sudoku::SudokuField*) malloc (sizeof(struct CP_sudoku::SudokuField));
- 		priority_queue<polje, vector<polje>, komparator> pq;
+ 		std::priority_queue<polje, std::vector<polje>, komparator> pq;
 			for (int row =0; row < 9; row++) {
          	for(int col = 0; col <9; col++) {
                if(init_values[row][col] == -1) {
@@ -166,3 +164,19 @@ private:
    int numOfIter = 0;
 
 };
+int main() {
+    int field[9][9] = { { 9, 1, -1, 3, -1, -1, 7, -1, -1 },
+                        { 7, -1, 8, -1, -1, -1, -1, -1, 9 },
+                        { -1, 3, 2, 7, -1, -1, -1, -1, 1 },
+                        { -1, -1, -1, 8, -1, -1, 2, 5, -1 },
+                        { -1, -1, -1, -1, 2, -1, -1, -1, -1 },
+                        { -1, 5, 4, -1, -1, 6, -1, -1, -1 },
+                        { 4, -1, -1, -1, -1, 1, 8, 2, -1 },
+                        { 1, -1, -1, -1, -1, -1, 6, -1, 5 },
+                        { -1, -1, 6, -1, -1, 8, -1, 1, 7 } };
+    CP_sudoku *solver = new CP_sudoku();
+    if (solver -> solve(field) != NULL) {
+        std::cout << "\nBacktrace calls: " << solver -> getIterations() << "\n";
+    }
+    return 0;
+}
