@@ -1,6 +1,7 @@
 # Sudoku Solver
 
-A C++ program that solves Sudoku puzzles using a backtracking algorithm with prioritized empty cells.
+2 C++ programs that solves Sudoku puzzles using a backtracking algorithm.
+One is using backtracking with constraints method with prioritized empty cells, other one is simple backtracking.
 
 ## Table of Contents
 
