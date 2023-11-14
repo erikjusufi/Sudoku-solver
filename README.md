@@ -8,9 +8,6 @@ A C++ program that solves Sudoku puzzles using a backtracking algorithm with pri
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Example](#example)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -42,4 +39,5 @@ To run the Sudoku Solver, execute the compiled program with a Sudoku puzzle as i
 
 ```bash
 ./sudoku_solver
+```
 The program will output the final solution and the number of backtrace calls.
